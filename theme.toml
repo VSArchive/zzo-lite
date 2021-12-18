@@ -1,12 +1,15 @@
-name = "Zzo"
+name = "Zzo-Extended"
 description = "Hugo blog theme with rich features."
-homepage = "https://zzo-docs.vercel.app/zzo"
 license = "MIT"
-licenselink = "https://github.com/zzossig/hugo-theme-zzo/blob/master/LICENSE.md"
+licenselink = "https://github.com/vineelsai26/zzo-extended/blob/master/LICENSE.md"
 tags = ["accessible", "multilingual", "responsive", "blog", "search", "simple", "light", "dark", "mobile", "gallery", "technical", "fast", "presentation"]
 features = ["accessible", "multilingual", "responsive", "grid", "sass", "search", "subtheme", "gallery", "technical", "fast", "presentation"]
-min_version = "0.65.0"
+min_version = "0.85.0"
 
 [author]
+  name = "Vineel Sai"
+  homepage = "https://vineelsai.com"
+
+[original]
   name = "zzossig"
   homepage = "https://zzossig.io"

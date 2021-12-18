@@ -5,7 +5,6 @@
   {{ if $.Site.Params.enableAppbarLangIcon }}
     {{ partial "navbar/language-icon" . }}
   {{ end }}
-  {{ partial "navbar/select-theme" . }}
   {{ $current := . }}
   {{ range .Site.Menus.main }}
   {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}

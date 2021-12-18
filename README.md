@@ -17,11 +17,10 @@ Your support will be of great help in maintaining the project.
 
 ## 💡 Features
 
-* Multiple Skins(dark, light, solarized, ...)
+* Multiple Skins(dark, light, ...)
 * Mobile menu
 * Search
 * Search Engine Optimization(SEO)
-* Multilingual (i18n)
 * Responsive design
 * Customizable UI
 * RSS

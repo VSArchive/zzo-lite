@@ -16,10 +16,17 @@
 
 <body id="root" class="theme__{{ index .Site.Params.themeOptions 0 }}">
     <script>
-        var localTheme = localStorage.getItem('theme');
-        if (localTheme) {
-            document.getElementById('root').className = 'theme__' + localTheme;
-        }
+        const body = document.getElementById("root")
+        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
+        darkThemeMq.addListener(e => {
+            if (e.matches) {
+                body.classList.add("theme__dark")
+                body.classList.remove("theme__light")
+            } else {
+                body.classList.add("theme__light")
+                body.classList.remove("theme__dark")
+            }
+        })
     </script>
     <div id="container">
         {{ partial "body/main-left" . }}

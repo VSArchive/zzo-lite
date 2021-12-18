@@ -517,19 +517,11 @@
   // ======================= theme change =======================
     var localTheme = localStorage.getItem('theme');
     var rootEleme = document.getElementById('root');
-    var selectThemeElem = document.querySelectorAll('.select-theme');
-    var selectThemeItemElem = document.querySelectorAll('.select-theme__item');
     
     {{ $skinDarkCode := (i18n "skin-dark") }}
     var skinDarkCode = JSON.parse({{ $skinDarkCode | jsonify }});
     {{ $skinLightCode := (i18n "skin-light") }}
     var skinLightCode = JSON.parse({{ $skinLightCode | jsonify }});
-    {{ $skinHackerCode := (i18n "skin-hacker") }}
-    var skinHackerCode = JSON.parse({{ $skinHackerCode | jsonify }});
-    {{ $skinSolarizedCode := (i18n "skin-solarized") }}
-    var skinSolarizedCode = JSON.parse({{ $skinSolarizedCode | jsonify }});
-    {{ $skinKimbieCode := (i18n "skin-kimbie") }}
-    var skinKimbieCode = JSON.parse({{ $skinKimbieCode | jsonify }});
 
     var setMetaColor = function(themeColor) {
       var metaMsapplicationTileColor = document.getElementsByName('msapplication-TileColor')[0];
@@ -547,22 +539,7 @@
         metaThemeColor.setAttribute('content', '#eee');
         metaMsapplicationNavbuttonColor.setAttribute('content', '#eee');
         metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#eee');
-      } else if (themeColor.includes('hacker')) {
-        metaMsapplicationTileColor.setAttribute('content', '#e3cd26');
-        metaThemeColor.setAttribute('content', '#252526');
-        metaMsapplicationNavbuttonColor.setAttribute('content', '#252526');
-        metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#252526');
-      } else if (themeColor.includes('solarized')) {
-        metaMsapplicationTileColor.setAttribute('content', '#d3af86');
-        metaThemeColor.setAttribute('content', '#51412c');
-        metaMsapplicationNavbuttonColor.setAttribute('content', '#51412c');
-        metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#51412c');
-      } else if (themeColor.includes('kimbie')) {
-        metaMsapplicationTileColor.setAttribute('content', '#586e75');
-        metaThemeColor.setAttribute('content', '#eee8d5');
-        metaMsapplicationNavbuttonColor.setAttribute('content', '#eee8d5');
-        metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#eee8d5');
-      }
+      } 
     }
 
     var parseSkinCode = function(themeText) {
@@ -570,84 +547,8 @@
         return 'dark';
       } else if (themeText === skinLightCode) {
         return 'light';
-      } else if (themeText === skinHackerCode) {
-        return 'hacker';
-      } else if (themeText === skinSolarizedCode) {
-        return 'solarized';
-      } else if (themeText === skinKimbieCode) {
-        return 'kimbie';
       }
     }
-    
-    if (localTheme) {
-      selectThemeItemElem ? 
-      selectThemeItemElem.forEach(function (elem) {
-        if (elem.text.trim() === localTheme) {
-          elem.classList.add('is-active');
-        } else {
-          elem.classList.remove('is-active');
-        }
-      }) : null;
-
-      setMetaColor(localTheme);
-    } else {
-      setMetaColor(rootEleme.className);
-    }
-
-    selectThemeItemElem ? 
-    selectThemeItemElem.forEach(function (v, i) {
-      v.addEventListener('click', function (e) {
-        var selectedThemeVariant = parseSkinCode(e.target.text.trim());
-        localStorage.setItem('theme', selectedThemeVariant);
-        setMetaColor(selectedThemeVariant);
-
-        rootEleme.removeAttribute('class');
-        rootEleme.classList.add('theme__' + selectedThemeVariant);
-        selectThemeElem.forEach(function(rootElem) {
-          rootElem.querySelectorAll('a').forEach(function (elem) {
-            if (elem.classList) {
-              if (elem.text.trim() === selectedThemeVariant) {
-                if (!elem.classList.contains('is-active')) {
-                  elem.classList.add('is-active');
-                }
-              } else {
-                if (elem.classList.contains('is-active')) {
-                  elem.classList.remove('is-active');
-                }
-              }
-            }
-          });
-        });
-
-        if (window.mermaid) {
-          if (selectedThemeVariant === "dark" || selectedThemeVariant === "hacker") {
-            mermaid.initialize({ theme: 'dark' });
-            location.reload();
-          } else {
-            mermaid.initialize({ theme: 'default' });
-            location.reload();
-          }
-        }
-
-        var utterances = document.getElementById('utterances');
-        if (utterances) {
-          utterances.querySelector('iframe').contentWindow.postMessage({
-            type: 'set-theme',
-            theme: selectedThemeVariant === "dark" || selectedThemeVariant === "hacker" ? 'photon-dark' : selectedThemeVariant === 'kimbie' ? 'github-dark-orange' : 'github-light',
-          }, 'https://utteranc.es');
-        }
-
-        var twitterCards = document.querySelectorAll('.twitter-timeline');
-        if (twitterCards) {
-          window.postMessage({
-            type: 'set-twitter-theme',
-            theme: selectedThemeVariant === 'light' || selectedThemeVariant === 'solarized' ? 'light' : 'dark',
-          });
-        }
-      });
-    }) : null;
-  // ============================================================
-
 
   // ========================== search ==========================
     {{ $baseurl := $.Site.BaseURL }}

@@ -134,24 +134,6 @@
     }
   }
 
-  .select-theme {    
-    &__label {      
-      color: inherit;
-      text-transform: capitalize;            
-    }
-
-    &__item {
-      text-transform: capitalize;
-    }
-  }
-
-  .select-lang {
-    &__label {
-      color: inherit;
-      text-transform: capitalize;
-    }
-  }
-
   .social {
     margin: 0.25rem;
     a {
