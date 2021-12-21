@@ -17,7 +17,7 @@
       var owner = JSON.parse({{ $owner | jsonify }});
       {{ $repo:= .Site.Params.utterances.repo }}
       var repo = JSON.parse({{ $repo | jsonify }});
-      {{ $baseTheme:= index .Site.Params.themeOptions 0 }}
+      {{ $baseTheme:= "light" }}
       var baseTheme = JSON.parse({{ $baseTheme | jsonify }});
       var localTheme = localStorage.getItem('theme');
       var utterTheme = checkTheme(localTheme, baseTheme);

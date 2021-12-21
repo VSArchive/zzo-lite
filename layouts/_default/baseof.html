@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" dir="{{ $.Param "languagedir" | default "ltr" }}">
+<html lang="en">
 
 <head prefix="og: http://ogp.me/ns#">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ block "title" . }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
-    {{ partial "head/scripts" . }}    
+    {{ partial "head/scripts" . }}
     {{ partial "head/styles" . }}
     {{ partial "head/meta" . }}
     {{ partial "head/meta_json_ld" . }}
@@ -14,7 +14,7 @@
     {{ partial "head/custom-head" . }}
 </head>
 
-<body id="root" class="theme__{{ index .Site.Params.themeOptions 0 }}">
+<body id="root" class="theme__light">
     <script>
         const body = document.getElementById("root")
         const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")

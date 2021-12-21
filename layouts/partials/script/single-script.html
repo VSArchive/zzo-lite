@@ -425,7 +425,7 @@
     var lib = JSON.parse({{ $lib | jsonify }});
 
     if (lib && lib.includes('mermaid')) {
-      {{ $themeVariant := (index .Site.Params.themeOptions 0) }}
+      {{ $themeVariant := ("light") }}
       var themeVariant = localStorage.getItem('theme') || JSON.parse({{ $themeVariant | jsonify }});
 
       if (themeVariant === "dark") {
