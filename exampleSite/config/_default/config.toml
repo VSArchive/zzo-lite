@@ -1,6 +1,6 @@
 baseURL = "http://example.org"
 title = "Hugo Zzo Theme"
-theme = "zzo-extended"
+theme = "zzo-lite"
 
 summaryLength = 70
 buildFuture = true

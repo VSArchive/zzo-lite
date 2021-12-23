@@ -8,7 +8,4 @@
   {{ with .Params.Author }}
   &nbsp;&middot;&nbsp; <span class="single__info" title="{{ i18n "single-writtenBy" }}">{{if $params.AuthorEmoji }}{{ $params.AuthorEmoji }}{{ else }}{{ ($.Site.Params.authorIcon | safeHTML) | default "✍️" }}{{ end }}&nbsp;{{ . }}</span>
   {{ end }}
-  <span class="single__info">
-    {{ if (and .Site.Params.enableBusuanzi .Site.Params.busuanziPagePV) }} &middot; {{ ($.Site.Params.pagePvIcon | safeHTML) | default "👀" }}<span id="busuanzi_value_page_pv">...</span> {{ i18n "counter-page-pv" }}{{ end }}
-  </span>
 </div>
