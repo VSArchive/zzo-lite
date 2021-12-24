@@ -40,7 +40,7 @@
     {{ range $index, $term := $.Site.Params.showMobileMenuTerms }}
       <li class="navbarm__menu--item {{ if (in $current.Permalink $term) }}active{{ end }}">
         <a href="{{ $term | relLangURL }}" class="navbarm__menu--term" data-index="{{ $index }}">
-          {{ i18n $term }}
+          {{ $term }}
         </a>
       </li>
     {{ end }}

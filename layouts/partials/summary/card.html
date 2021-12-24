@@ -2,13 +2,13 @@
   <header>
     <h5 class="title h5"><a href='{{ .Permalink }}'>{{- with .Params.pinned -}}{{ ($.Site.Params.pinIcon | safeHTML) | default "📌" }}&nbsp;{{- end -}}{{ .Title }}</a> </h5>
     <h6 class="subtitle caption">
-      <time title="{{ i18n "tooltip-written" }}" >{{ ($.Site.Params.writtenTimeIcon | safeHTML) | default "📅" }}{{ .Date.Format (i18n "summary-dateformat") }} </time> 
-      {{ if ne (.Date.Format (i18n "summary-dateformat")) (.Lastmod.Format (i18n "summary-dateformat")) }}
-        <time title="{{ i18n "tooltip-modified" }}" > &middot; {{ ($.Site.Params.modifiedTimeIcon | safeHTML) | default "📝" }} {{ .Lastmod.Format (i18n "summary-dateformat") }} </time> 
+      <time title="Written At" >{{ ($.Site.Params.writtenTimeIcon | safeHTML) | default "📅" }}{{ .Date.Format ("Jan 2, 2006") }} </time> 
+      {{ if ne (.Date.Format ("Jan 2, 2006")) (.Lastmod.Format ("Jan 2, 2006")) }}
+        <time title="Modified At" > &middot; {{ ($.Site.Params.modifiedTimeIcon | safeHTML) | default "📝" }} {{ .Lastmod.Format ("Jan 2, 2006") }} </time> 
       {{ end }} 
-      <span title="{{ i18n "tooltip-reading-time" }}" > &middot; {{ ($.Site.Params.readingTimeIcon | safeHTML) | default "☕" }} {{ .ReadingTime }} {{ i18n "reading-time" }}</span>
+      <span title="Reading Time" > &middot; {{ ($.Site.Params.readingTimeIcon | safeHTML) | default "☕" }} {{ .ReadingTime }} Reading Time</span>
       {{ with $.Param "author" }}
-      &middot; <span title="{{ i18n "single-writtenBy" }}" >{{ if $.Param "AuthorEmoji" }}{{ $.Param "AuthorEmoji" }}{{ else }}{{ ($.Site.Params.authorIcon | safeHTML) | default "✍️" }}{{ end }}&nbsp;{{ . }}</span>
+      &middot; <span title="WRITTEN BY" >{{ if $.Param "AuthorEmoji" }}{{ $.Param "AuthorEmoji" }}{{ else }}{{ ($.Site.Params.authorIcon | safeHTML) | default "✍️" }}{{ end }}&nbsp;{{ . }}</span>
       {{ end }}
     </h6>
   </header>

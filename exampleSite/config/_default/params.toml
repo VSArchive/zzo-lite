@@ -103,7 +103,6 @@ fullContents = false
 # comment
 enableComment = true
 disqus_shortname = ""
-commento = false
 
 [telegram]
   enable = false

@@ -518,9 +518,9 @@
     var localTheme = localStorage.getItem('theme');
     var rootEleme = document.getElementById('root');
     
-    {{ $skinDarkCode := (i18n "skin-dark") }}
+    {{ $skinDarkCode := "dark" }}
     var skinDarkCode = JSON.parse({{ $skinDarkCode | jsonify }});
-    {{ $skinLightCode := (i18n "skin-light") }}
+    {{ $skinLightCode := "light" }}
     var skinLightCode = JSON.parse({{ $skinLightCode | jsonify }});
 
     var setMetaColor = function(themeColor) {
