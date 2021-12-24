@@ -16,17 +16,24 @@
 
 <body id="root" class="theme__light">
     <script>
-        const body = document.getElementById("root")
-        const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
-        darkThemeMq.addListener(e => {
-            if (e.matches) {
-                body.classList.add("theme__dark")
-                body.classList.remove("theme__light")
-            } else {
-                body.classList.add("theme__light")
-                body.classList.remove("theme__dark")
-            }
-        })
+        let body = document.getElementById("root")
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            body.classList.add("theme__dark")
+            body.classList.remove("theme__light")
+        } else {
+            body.classList.add("theme__light")
+            body.classList.remove("theme__dark")
+        }
+        window.matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', event => {
+                if (event.matches) {
+                    body.classList.remove("theme__light")
+                    body.classList.add("theme__dark")
+                } else {
+                    body.classList.remove("theme__dark")
+                    body.classList.add("theme__light")
+                }
+            })
     </script>
     <div id="container">
         {{ partial "body/main-left" . }}

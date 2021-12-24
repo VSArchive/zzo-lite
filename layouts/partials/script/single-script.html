@@ -404,43 +404,6 @@
     });
     // =================================================================
 
-
-
-    // ============================ mermaid ============================
-    {{ $lib := .Params.libraries }}
-    var lib = JSON.parse({{ $lib | jsonify }});
-
-    if (lib && lib.includes('mermaid')) {
-      {{ $themeVariant := ("light") }}
-      var themeVariant = localStorage.getItem('theme') || JSON.parse({{ $themeVariant | jsonify }});
-
-      if (themeVariant === "dark") {
-        mermaid.initialize({ theme: 'dark' });
-      } else {
-        mermaid.initialize({ theme: 'default' });
-      }
-      
-      var mermaids = [];
-      [].push.apply(mermaids, document.getElementsByClassName('language-mermaid'));
-      mermaids.forEach(function(elem) {
-        var elemParentNode = elem.parentNode;
-
-        if (elemParentNode !== document.body) {
-          elemParentNode.parentNode.insertBefore(elem, elemParentNode);
-          elemParentNode.parentNode.removeChild(elemParentNode);
-        }
-
-        var newElemWrapper = document.createElement('div');
-        newElemWrapper.classList.add('mermaid');
-        newElemWrapper.style.padding = '34px 4px 6px';
-        newElemWrapper.innerHTML = elem.innerHTML;
-        elem.replaceWith(newElemWrapper);
-      });
-    }
-    // =================================================================
-
-    
-
     // ============================= katex =============================
     if (lib && lib.includes('katex')) {
       var mathElements = document.getElementsByClassName('math');

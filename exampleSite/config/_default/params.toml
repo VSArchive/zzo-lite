@@ -109,10 +109,6 @@ disqus_shortname = ""
   siteId = ""
   dataLimit = 5
 
-[utterances]       # https://utteranc.es/
-  owner = ""              # Your GitHub ID
-  repo = ""               # The repo to store comments
-
 [gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
   owner = ""              # Your GitHub ID
   repo = ""               # The repo to store comments

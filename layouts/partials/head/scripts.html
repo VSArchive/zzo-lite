@@ -513,43 +513,6 @@
     };
   // ============================================================
 
-
-  // ======================= theme change =======================
-    var localTheme = localStorage.getItem('theme');
-    var rootEleme = document.getElementById('root');
-    
-    {{ $skinDarkCode := "dark" }}
-    var skinDarkCode = JSON.parse({{ $skinDarkCode | jsonify }});
-    {{ $skinLightCode := "light" }}
-    var skinLightCode = JSON.parse({{ $skinLightCode | jsonify }});
-
-    var setMetaColor = function(themeColor) {
-      var metaMsapplicationTileColor = document.getElementsByName('msapplication-TileColor')[0];
-      var metaThemeColor = document.getElementsByName('theme-color')[0];
-      var metaMsapplicationNavbuttonColor = document.getElementsByName('msapplication-navbutton-color')[0];
-      var metaAppleMobileWebAappStatusBarStyle = document.getElementsByName('apple-mobile-web-app-status-bar-style')[0];
-
-      if (themeColor.includes('dark')) {
-        metaMsapplicationTileColor.setAttribute('content', '#fcfcfa');
-        metaThemeColor.setAttribute('content', '#403E41');
-        metaMsapplicationNavbuttonColor.setAttribute('content', '#403E41');
-        metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#403E41');
-      } else if (themeColor.includes('light')) {
-        metaMsapplicationTileColor.setAttribute('content', '#555');
-        metaThemeColor.setAttribute('content', '#eee');
-        metaMsapplicationNavbuttonColor.setAttribute('content', '#eee');
-        metaAppleMobileWebAappStatusBarStyle.setAttribute('content', '#eee');
-      } 
-    }
-
-    var parseSkinCode = function(themeText) {
-      if (themeText === skinDarkCode) {
-        return 'dark';
-      } else if (themeText === skinLightCode) {
-        return 'light';
-      }
-    }
-
   // ========================== search ==========================
     {{ $baseurl := $.Site.BaseURL }}
     var baseurl = JSON.parse({{ $baseurl | jsonify }});

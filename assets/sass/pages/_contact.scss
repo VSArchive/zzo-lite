@@ -93,6 +93,7 @@
     font-weight: bold;
     border: none;
     border-radius: 0.125rem;
+    cursor: pointer;
 
     @include themify($themes) {
       color: inherit;

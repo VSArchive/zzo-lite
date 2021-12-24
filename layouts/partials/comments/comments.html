@@ -3,8 +3,6 @@
     {{ partial "comments/disqus.html" . }}
   {{ else if $.Param "gitalk.owner" }}
     {{ partial "comments/gitalk.html" . }}
-  {{ else if $.Param "utterances.owner" }}
-    {{ partial "comments/utterances.html" . }}
   {{ else if $.Param "isso.enable" }}
     {{ partial "comments/isso.html" . }}
   {{ else if $.Param "telegram.enable" }}
