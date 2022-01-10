@@ -2,9 +2,6 @@
   {{ if $.Site.Params.enableAppbarSearchIcon }}
     {{ partial "navbar/search-icon" . }}
   {{ end }}
-  {{ if $.Site.Params.enableAppbarLangIcon }}
-    {{ partial "navbar/language-icon" . }}
-  {{ end }}
   {{ $current := . }}
   {{ range .Site.Menus.main }}
   {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}

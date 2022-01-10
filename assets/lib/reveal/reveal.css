@@ -1509,7 +1509,8 @@ body {
  * SPEAKER NOTES
  *********************************************/
 .reveal aside.notes {
-  display: none; }
+  display: none;
+}
 
 .reveal .speaker-notes {
   display: none;

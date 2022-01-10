@@ -4,7 +4,7 @@
   {{ if ne (.Date.Format ("Jan 2, 2006")) (.Lastmod.Format ("Jan 2, 2006")) }}
   &nbsp;&middot;&nbsp; <time class="single__info" title="Modified At"> {{ ($.Site.Params.modifiedTimeIcon | safeHTML) | default "📝" }}&nbsp;{{ .Lastmod.Format ("Jan 2, 2006") }} </time>
   {{ end }}
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> {{ ($.Site.Params.readingTimeIcon | safeHTML) | default "☕" }}&nbsp;{{ .ReadingTime }}&nbsp;Reading Time </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> {{ ($.Site.Params.readingTimeIcon | safeHTML) | default "☕" }}&nbsp;{{ .ReadingTime }}&nbsp;min read</span>
   {{ with .Params.Author }}
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">{{if $params.AuthorEmoji }}{{ $params.AuthorEmoji }}{{ else }}{{ ($.Site.Params.authorIcon | safeHTML) | default "✍️" }}{{ end }}&nbsp;{{ . }}</span>
   {{ end }}

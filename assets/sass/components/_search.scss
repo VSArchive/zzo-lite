@@ -304,34 +304,13 @@
     }
   }
 
-  &[data-dir="ltr"] {
-    .mobile-search__top--icon {
-      right: 0;
-    }
-    
-    .mobile-search__body {
-      direction: ltr;
-    }
-
-    .mobile-search__top--input {
-      direction: ltr;
-      left: 0;
-    }
+  .mobile-search__top--icon {
+    left: 0; 
   }
 
-  &[data-dir="rtl"] {
-    .mobile-search__top--icon {
-      left: 0; 
-    }
-
-    .mobile-search__body {
-      direction: rtl; 
-    }
-
-    .mobile-search__top--input {
-      direction: rtl;
-      right: 0;
-    }
+  .mobile-search__top--input {
+    direction: ltr;
+    right: 0;
   }
 
   &__btn {

@@ -405,6 +405,9 @@
     // =================================================================
 
     // ============================= katex =============================
+    {{ $lib := .Params.libraries }}
+    var lib = JSON.parse({{ $lib | jsonify }});
+    
     if (lib && lib.includes('katex')) {
       var mathElements = document.getElementsByClassName('math');
       var options = {

@@ -290,6 +290,8 @@
       display: block;
       border-radius: 0.25rem;
       margin: 0 auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 
     p {
@@ -311,33 +313,16 @@
       list-style: disc outside none;
     }
 
-    &[data-dir="rtl"] {
-      li {
-        margin-right: 2rem;
-      }
-
-      blockquote {
-        margin: 0 1.5rem 1.75rem 1.75rem;
-        padding: 0 1.42188rem 0 0;
-
-        @include themify($themes) {
-          border-right: 0.32813rem solid themed("single-blockquote-border-color");
-        }
-      }
+    li {
+      margin-left: 2rem;
     }
 
-    &[data-dir="ltr"] {
-      li {
-        margin-left: 2rem;
-      }
+    blockquote {
+      margin: 0 1.75rem 1.75rem 1.5rem;
+      padding: 0 0 0 1.42188rem;
 
-      blockquote {
-        margin: 0 1.75rem 1.75rem 1.5rem;
-        padding: 0 0 0 1.42188rem;
-
-        @include themify($themes) {
-          border-left: 0.32813rem solid themed("single-blockquote-border-color");
-        }
+      @include themify($themes) {
+        border-left: 0.32813rem solid themed("single-blockquote-border-color");
       }
     }
 

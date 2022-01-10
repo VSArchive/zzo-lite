@@ -9,20 +9,6 @@
   right: 0;
   top: 0;
 
-  &[data-dir="rtl"] {
-    direction: rtl;
-  }
-  
-  &[data-dir="ltr"] {
-    direction: ltr;
-  }
-
-  @media only screen and (max-width: 769px) {
-    &[data-dir="rtl"] {
-      direction: ltr;  
-    }
-  }
-
   @include transition(all, 0.2s, ease);  
   @include flexbox();
   @include justify-content(space-between);

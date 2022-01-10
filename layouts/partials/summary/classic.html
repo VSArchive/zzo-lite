@@ -23,7 +23,7 @@
           {{ if ne (.Date.Format ("Jan 2, 2006")) (.Lastmod.Format ("Jan 2, 2006")) }}
           <time title="Modified At" > &middot; {{ ($.Site.Params.modifiedTimeIcon | safeHTML) | default "📝" }}&nbsp;{{ .Lastmod.Format ("Jan 2, 2006") }} </time>
           {{ end }}
-          <span title="Reading Time" > &middot; {{ ($.Site.Params.readingTimeIcon | safeHTML) | default "☕" }}&nbsp;{{ .ReadingTime }}&nbsp;Reading Time </span>
+          <span title="Reading Time" > &middot; {{ ($.Site.Params.readingTimeIcon | safeHTML) | default "☕" }}&nbsp;{{ .ReadingTime }}&nbsp;min read</span>
           {{ with $.Param "author" }}
           &middot; <span title="WRITTEN BY" >{{ if $.Param "authorEmoji" }}{{ $.Param "authorEmoji" }}{{ else }}{{ ($.Site.Params.authorIcon | safeHTML) | default "✍️" }}{{ end }}&nbsp;{{ . }}</span>
           {{ end }}
