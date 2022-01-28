@@ -86,9 +86,7 @@
   {{ if (fileExists "static/apple-touch-icon.png") -}}
   <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
   {{- end }}
-  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
-  <link rel="icon" href="{{ "favicon.png" | relURL }}" sizes="any" type="image/png" />
-  {{ if (fileExists "static/logo.svg") -}}
-  <link rel="icon" href="{{ "logo.svg" | relURL }}" sizes="any" type="image/svg+xml" />
+  {{ if (fileExists "static/favicon.ico") -}}
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   {{- end }}
 {{ end }}
