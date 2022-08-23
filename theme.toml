@@ -1,4 +1,4 @@
-name = "Zzo-Lite"
+name = "zzo-Lite"
 description = "Hugo blog theme with rich features."
 license = "MIT"
 licenselink = "https://github.com/vineelsai26/zzo-lite/blob/master/LICENSE.md"
@@ -9,7 +9,3 @@ min_version = "0.85.0"
 [author]
   name = "Vineel Sai"
   homepage = "https://vineelsai.com"
-
-[original]
-  name = "zzossig"
-  homepage = "https://zzossig.io"
