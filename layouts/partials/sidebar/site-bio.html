@@ -32,7 +32,7 @@
   
   {{ if $.Param "organization" }}
   <div class="bio__info">
-    <div class="bio__info--icon">
+    <div class="bio__info--icon" style="padding-top: 4px;">
       {{ partial "svgs/etc/people.svg" (dict "width" 20 "height" 20) }}
     </div>
     {{ $.Param "organization" }}
@@ -41,28 +41,28 @@
 
   {{ if $.Param "location" }}
   <div class="bio__info">
-    <div class="bio__info--icon">
+    <div class="bio__info--icon" style="padding-top: 4px;">
       {{ partial "svgs/etc/location.svg" (dict "width" 20 "height" 20) }}
     </div>
-    {{ $.Param "location" }}
+    <p style="margin: 3px;">{{ $.Param "location" }}</p>
   </div>
   {{ end }}
 
   {{ if $.Param "email" }}
   <div class="bio__info">
-    <div class="bio__info--icon">      
+    <div class="bio__info--icon" style="padding-top: 4px;">      
       {{ partial "svgs/social/email.svg" (dict "width" 20 "height" 20) }}
     </div>
-    <a href="mailto:{{ $.Param "email" }}">{{ $.Param "email" }}</a>    
+    <a href="mailto:{{ $.Param "email" }}" style="margin: 3px;">{{ $.Param "email" }}</a>    
   </div>
   {{ end }}
 
   {{ if $.Param "link" }}
   <div class="bio__info">
-    <div class="bio__info--icon">
+    <div class="bio__info--icon" style="padding-top: 4px;">
       {{ partial "svgs/etc/link.svg" (dict "width" 20 "height" 20) }}
     </div>
-    <a href="{{ $.Param "link" }}" target="_blank" rel="noreferrer">{{ $.Param "link" }}</a>    
+    <a href="{{ $.Param "link" }}" target="_blank" rel="noreferrer" style="margin: 3px;">{{ $.Param "link" }}</a>    
   </div>
   {{ end }}
 
